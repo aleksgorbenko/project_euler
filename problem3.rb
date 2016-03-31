@@ -11,7 +11,7 @@ What is the largest prime factor of the number 600851475143 ?
 # method to see if the number is prime or not
 
 def prime?(n)
-  (2..(n-1)).each { |x| false if n % x == 0 }
+  (2..(n-1)).each { |x| return false if n % x == 0 }
   true
 end
 
@@ -21,7 +21,7 @@ prime_factor_arr = []
 number = 600_851_475_143
 x = 2
 
-while x < number
+while x < (number / x)
   if number % x == 0 && prime?(x)
     prime_factor_arr << x
   end
